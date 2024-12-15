@@ -1,0 +1,219 @@
+<style>
+body {
+
+    font-family: 'Poppins', Arial, sans-serif;  /* Définit la police de caractères principale */
+    margin: 20px; 
+    background-color: #f9f9f9; 
+    color: #333;  
+}
+
+/* Style pour le titre principal de la page */
+h1 {
+    text-align: center;  
+    color: #444;
+    font-size: 2rem;  /* Définit la taille du texte à 2 rem */
+    margin-bottom: 20px;  /* Ajoute un espacement en bas du titre */
+}
+
+/* Style pour le formulaire */
+form {
+    background: #fff; 
+    padding: 20px;  
+    border-radius: 8px;  /* Arrondit les coins du formulaire */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Ajoute une légère ombre autour du formulaire */
+    max-width: 600px;  /* Définit une largeur maximale pour le formulaire */
+    margin: 0 auto 20px;  /* Centre le formulaire horizontalement et ajoute un espacement en bas */
+}
+
+/* Style pour les étiquettes dans le formulaire */
+form label {
+    font-weight: bold;  
+    margin-bottom: 5px;  
+    display: block;  /* Force l'étiquette à être sur une nouvelle ligne */
+    color: #555;  
+}
+
+/* Style pour les champs de saisie et les boutons dans le formulaire */
+form input, form button {
+    width: 100%;  /* Rend les champs de saisie et les boutons de largeur complète */
+    padding: 10px;  /* Ajoute de l'espace intérieur */
+    margin-bottom: 15px;  /* Ajoute un espacement en bas de chaque champ */
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    font-size: bold;
+    box-sizing: border-box;  /* Inclut le padding et la bordure dans la largeur totale */
+}
+
+/* Style pour les champs de saisie lorsque l'utilisateur les sélectionne */
+form input:focus {
+    border-color: #ba5a7d;  
+    outline: none;  /* Supprime le contour par défaut lors de la sélection */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  /* Ajoute une ombre bleue pour un effet visuel */
+}
+
+/* Style pour le bouton du formulaire */
+form button {
+    background-color: #ba5a7d;  
+    color: #fff; 
+    font-weight: bold; 
+    cursor: pointer;  /* Change le curseur au survol pour indiquer que c'est cliquable */
+    border: none;  /* Supprime la bordure par défaut */
+    transition: background-color 0.3s ease;  /* Ajoute une transition douce pour la couleur de fond */
+}
+
+/* Style pour le bouton lors du survol */
+form button:hover {
+    background-color: #9c0b4a;  
+}
+
+/* Style pour la table des jeux */
+.games-table {
+    width: 100%;  /* Rend la table de largeur complète */
+    border-collapse: collapse;  /* Assure que les bordures ne se chevauchent pas */
+    margin-top: 20px;  
+    background: #fff;  /* Définit un fond blanc pour la table */
+    border-radius: 8px; 
+    overflow: hidden;  /* Masque tout débordement de contenu */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Ajoute une ombre légère autour de la table */
+}
+
+
+/* Bordure autour des cellules du tableau */
+.games-table th, .games-table td {
+    border: 1px solid #ddd;  /* Ajoute une bordure grise autour de chaque cellule */
+    padding: 8px;
+    text-align: left;  /* Alignement du texte à gauche dans les cellules */
+}
+
+/* Bordure supplémentaire pour l'en-tête */
+.games-table th {
+    background-color: #ba5a7d;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Style des lignes paires pour plus de clarté */
+.games-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style au survol des lignes */
+.games-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+        /*.cover-image {
+            width: 120px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }*/
+
+        #search {
+            margin: 20px auto;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #search:focus {
+            border-color: #ba5a7d;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        #saveGamesButton {
+            background-color: #ba5a7d;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #saveGamesButton:hover {
+            background-color: #9c0b4a;
+            transform: scale(1.05);
+        }
+
+        /*.additional-image {
+            width: 200px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-right: 10px;
+        }*/
+
+        .cover-image, .additional-images {
+    max-width: 180px; 
+    max-height: 250px; 
+    object-fit: contain; /* L'image s'adapte à la taille du conteneur sans déformation */
+    display: block; /* Pour éviter tout espacement indésirable */
+    margin: 0 auto; /* Centrer l'image dans la cellule */
+}
+        /* Style pour le bouton Modifier */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #266d2a;
+            transform: scale(1.05);
+        }
+
+        /* Style pour le bouton Poubelle */
+        .delete-button {
+            background-color: #be1515;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .delete-button:hover {
+            background-color: #870404;
+            transform: scale(1.1);
+        }
+
+        /* Pagination buttons */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 10px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color :#ba5a7d; 
+            cursor: pointer;
+        }
+
+        .pagination button:hover {
+            background-color:#9c0b4a;
+            color: white;
+        }
+    </style>

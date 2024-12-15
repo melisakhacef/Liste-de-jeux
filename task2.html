@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des jeux vidéo</title>
+
+    <!-- Lier le fichier CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Titre de la page affichant "Liste des jeux vidéo" -->
+    <h1>Liste des jeux vidéo</h1>
+
+    <!-- Label et champ d'entrée pour sélectionner le nombre de jeux affichés par page -->
+    <label for="itemsPerPage">Jeux par page:</label>
+    <input type="number" id="itemsPerPage" value="3" min="1" max="10"> <!-- Nombre de jeux par page, limité entre 1 et 10 -->
+
+    <!-- Formulaire pour ajouter un nouveau jeu -->
+    <form id="gameForm">
+        <!-- Champ de saisie pour le nom du jeu -->
+        <label for="name">Nom du jeu</label>
+        <input type="text" id="name" required> <!-- Le champ est requis -->
+
+        <!-- Champ de saisie pour la plateforme du jeu -->
+        <label for="platform">Plateforme</label>
+        <input type="text" id="platform" required> 
+
+        <!-- Champ de saisie pour l'éditeur du jeu -->
+        <label for="publisher">Éditeur</label>
+        <input type="text" id="publisher" required>
+
+        <!-- Champ de saisie pour la catégorie du jeu -->
+        <label for="category">Catégorie</label>
+        <input type="text" id="category" required> 
+
+        <!-- Champ de saisie pour la date de sortie du jeu -->
+        <label for="releaseDate">Date de sortie</label>
+        <input type="date" id="releaseDate"> <!-- Champ non obligatoire -->
+
+        <!-- Champ de saisie pour l'URL de l'image de couverture du jeu -->
+        <label for="coverURL">URL de la couverture</label>
+        <input type="text" id="coverURL" required> 
+
+        <!-- Champ de saisie pour les images supplémentaires, séparées par des virgules -->
+        <label for="additionalImages">Additional Images (comma-separated URLs):</label>
+        <input type="text" id="additionalImages" required>
+
+        <!-- Champ de saisie pour l'URL de la vidéo YouTube associée au jeu -->
+        <label for="youtubeURL">YouTube Video URL:</label>
+        <input type="url" id="youtubeURL" required> 
+
+        <!-- Bouton pour soumettre le formulaire et ajouter un jeu -->
+        <button type="submit">Ajouter un jeu</button>
+    </form>
+
+    <!-- Champ de recherche pour filtrer les jeux affichés -->
+    <input type="text" id="search" placeholder="Rechercher un jeu..." oninput="searchGames()"> <!-- Filtre les jeux au fur et à mesure de la saisie -->
+
+    <!-- Conteneur pour afficher la liste des jeux sous forme de tableau -->
+    <div id="gamesTable"></div>
+
+    <!-- Section de pagination permettant de naviguer entre les pages de jeux -->
+    <div class="pagination">
+        <button id="prevPage" onclick="changePage(-1)">Précédent</button> <!-- Bouton pour passer à la page précédente -->
+        <button id="nextPage" onclick="changePage(1)">Suivant</button> <!-- Bouton pour passer à la page suivante -->
+    </div>
+
+    <!-- Bouton pour sauvegarder les jeux dans une base de données ou dans le stockage local -->
+    <button id="saveGamesButton">Enregistrer les jeux</button> <!-- Sauvegarde les jeux ajoutés -->
+    <!-- Lier le fichier JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>
